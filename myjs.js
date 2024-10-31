@@ -1,59 +1,61 @@
-titlesAndCovers = 
-[
+const titlesAndCovers = [
   {
     "title": "Kanye",
-    "cover": "example.jpg"
+    "cover": "minion.png"
   },
   {
     "title": "Eminem",
-    "cover": "example.jpg"
+    "cover": "minion.png"
   },
   {
     "title": "JavaScript: The Good Parts",
-    "cover": "example.jpg"
+    "cover": "minion.png"
   }
-]
+];
 
+const imgDirectory = 'img/';
 
-function createAlbum(title, cover){
+function createAlbum(title, cover) {
   var album = document.createElement('div');
   album.classList.add('album');
 
   var img = document.createElement('img');
   img.src = cover;
+  img.alt = title;
+  img.classList.add('img-fluid'); // Ensures image styling from Bootstrap
 
   var p = document.createElement('p');
   p.textContent = title;
 
   album.appendChild(img);
   album.appendChild(p);
+
+  return album;
 }
 
-function titlePageAlbums(){
+function titlePageAlbums() {
   var albumGrid = document.querySelector('.album-grid');
 
-  titlePageAlbums.forEach(element => {
-    createAlbum(element.title, element.cover);
+  titlesAndCovers.forEach(element => {
+    var album = createAlbum(element.title, imgDirectory + element.cover);
     albumGrid.appendChild(album);
   });
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
-    const playButton = document.querySelector('#playBtn');
-    let isPlaying = false;
-    titlePageAlbums();
-    playButton.addEventListener('click', function() {
-      if (!isPlaying) {
-        playButton.textContent = 'Pause';
-        isPlaying = true;
-        // Code to play music 
-      } else {
-        playButton.textContent = 'Play';
-        isPlaying = false;
-        // Code to pause music 
-      }
-    });
-  });
+  const playButton = document.querySelector('#PlayBtn'); // Matches the Play button
+  let isPlaying = false;
+  titlePageAlbums();
   
+  playButton.addEventListener('click', function() {
+    if (!isPlaying) {
+      playButton.textContent = 'Pause';
+      isPlaying = true;
+      // Code to play music
+    } else {
+      playButton.textContent = 'Play';
+      isPlaying = false;
+      // Code to pause music
+    }
+  });
+});
