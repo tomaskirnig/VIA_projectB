@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Project - Add Album</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="d-flex justify-content-between align-items-center">
+        <div id="logoDiv">
+            <img src="img/spotLogo.jpg" alt="logo">
+        </div>
+        <input type="search" class="form-control w-25 align-items-center" placeholder="Search...">
+    </header>
+    
+      <!-- Sidebar -->
+  <div class="d-flex">
+    <nav id="sidebar" class="bg-dark text-light p-3">
+      <h2 class="text-light">Spityfo</h2>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light active" href="Form.html">Form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="CountDown.html">Count down</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="Gallery.html">Gallery</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div class="content-wrapper d-flex justify-content-center flex-grow-1">
+        <!-- Main Content with Tabs -->
+        <div id="main-content-add-album" class="d-flex flex-column align-items-center text-center p-4">
+            <h3 class="text-light mb-4">Add New Album or Song</h3>
+      
+            <!-- Tabs Navigation -->
+            <ul class="nav nav-tabs justify-content-center" id="formTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="album-tab" data-bs-toggle="tab" data-bs-target="#album" type="button" role="tab" aria-controls="album" aria-selected="true">Add Album</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="song-tab" data-bs-toggle="tab" data-bs-target="#song" type="button" role="tab" aria-controls="song" aria-selected="false">Add Song</button>
+              </li>
+            </ul>
+      
+            <!-- Tab Content -->
+            <div class="tab-content bg-dark p-4 rounded text-light mt-3" id="formTabsContent" style="width: 100%; max-width: 500px;">
+              <!-- Album Form -->
+              <div class="tab-pane fade show active" id="album" role="tabpanel" aria-labelledby="album-tab">
+                <form id="albumForm">
+                  <div class="mb-3">
+                    <label for="albumTitle" class="form-label">Album Title</label>
+                    <input type="text" class="form-control bg-secondary text-light" id="albumTitle" placeholder="Enter album title">
+                  </div>
+                  <div class="mb-3">
+                    <label for="albumCover" class="form-label">Image Source</label>
+                    <input type="text" class="form-control bg-secondary text-light" id="albumCover" placeholder="Enter image URL">
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Add Album</button>
+                </form>
+              </div>
+      
+              <!-- Song Form -->
+              <div class="tab-pane fade" id="song" role="tabpanel" aria-labelledby="song-tab">
+                <form id="songForm">
+                  <div class="mb-3">
+                    <label for="songName" class="form-label">Song Name</label>
+                    <input type="text" class="form-control bg-secondary text-light" id="songName" placeholder="Enter song name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="songAlbum" class="form-label">Album</label>
+                    <input type="text" class="form-control bg-secondary text-light" id="songAlbum" placeholder="Enter album name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="songInterpret" class="form-label">Interpret</label>
+                    <input type="text" class="form-control bg-secondary text-light" id="songInterpret" placeholder="Enter interpret name">
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Add Song</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="myjs.js"></script>
+</body>
+</html>

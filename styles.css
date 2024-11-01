@@ -1,44 +1,123 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  #sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
-  #main-content {
-    margin-left: 250px;
-  }
-  
-  .album-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .album {
-    width: 150px;
-    text-align: center;
-  }
-  
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 250px;
-    width: calc(100% - 250px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .player-controls button {
-    margin: 0 10px;
-  }
-  
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+#logoDiv {
+  width: 80px;
+  height: 80px; 
+    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 80px;
+}
+
+#logoDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keeps image proportions */
+}
+
+header {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  gap: 20px; /* Space between the heading and search bar */
+}
+
+header input {
+  max-width: 300px; /* Limits width for a neater look */
+  flex-grow: 1; /* Allows the search bar to take up extra space if needed */
+}
+
+#sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 80px;
+  left: 5px;
+  border-radius: 5px;
+  height: calc(100vh - 160px);
+}
+
+#main-content {
+  border-radius: 5px;
+  margin-left: 260px;
+  height: calc(100vh - 160px);
+  overflow-y: auto; /* Allows scrolling */
+  padding-bottom: 20px; 
+}
+
+#main-content::-webkit-scrollbar {
+  width: 10px; 
+}
+
+#main-content::-webkit-scrollbar-track {
+  background: #333;
+}
+
+#main-content::-webkit-scrollbar-thumb {
+  background-color: #666; /* Scrollbar thumb color */
+  border-radius: 5px; /* Rounded corners */
+  border: 2px solid #333; /* Adds space around thumb */
+}
+
+#main-content.hide-scrollbar::-webkit-scrollbar {
+  width: 0; 
+}
+
+/* Hide scrollbar on Firefox */
+#main-content.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.album-grid {
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+
+.album {
+  width: 150px;
+  text-align: center;
+}
+
+footer {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  /* left: 250px; */
+  /* width: calc(100% - 250px); */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.player-controls button {
+  margin: 0 10px;
+}
+
+/* Form style */
+
+#main-content-add-album{
+  border-radius: 5px;
+  /* margin-left: 260px; */
+  height: calc(100vh - 160px);
+  width: 50%;
+  overflow-y: auto; /* Allows scrolling */
+  padding-bottom: 20px; 
+}
+
+.content-wrapper {
+  margin-left: 260px; /* Width of the sidebar */
+  padding-right: 20px;
+  max-width: calc(100% - 250px); /* Ensures it doesn’t go beyond sidebar */
+}

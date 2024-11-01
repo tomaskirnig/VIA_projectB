@@ -23,42 +23,45 @@
       <h2 class="text-light">Spityfo</h2>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-light active" href="index.html">Home</a>
+          <a class="nav-link text-light" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="Form.html">Form</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="CountDown.html">Count down</a>
+          <a class="nav-link text-light active" href="CountDown.html">Count down</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="Gallery.html">Gallery</a>
         </li>
       </ul>
     </nav>
-
-    <!-- Main Content -->
-    <div id="main-content" class="flex-grow-1 p-3 bg-dark">
-      <div id="first-album-grid" class="album-grid text-light">
-        <!-- Albums Added here -->
-      </div>
+    <!-- Countdown Main Content -->
+    <div class="content-wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1 text-center">
+        <h1 class="text-light mb-4">Countdown to Event</h1>
+        <div class="countdown-timer bg-dark text-light p-5 rounded" style="width: 100%; max-width: 500px;">
+        <div class="row">
+            <div class="col">
+                <h2 id="days" class="display-4">00</h2>
+                <p>Days</p>
+            </div>
+            <div class="col">
+                <h2 id="hours" class="display-4">00</h2>
+                <p>Hours</p>
+            </div>
+            <div class="col">
+                <h2 id="minutes" class="display-4">00</h2>
+                <p>Minutes</p>
+            </div>
+            <div class="col">
+                <h2 id="seconds" class="display-4">00</h2>
+                <p>Seconds</p>
+            </div>
+        </div>
+        </div>
     </div>
   </div>
 
-  <!-- Footer (Music Player) -->
-  <footer class="text-light d-flex justify-content-between p-3">
-    <div class="song-info">
-      <p>Song Name - Artist</p>
-    </div>
-    <div class="player-controls">
-      <button id="PrevBtn" class="btn btn-light">Prev</button>
-      <button id="PlayBtn" class="btn btn-light">Play</button>
-      <button id="NextBtn" class="btn btn-light">Next</button>
-    </div>
-    <div class="volume-control">
-      <input type="range" min="0" max="100" class="form-range">
-    </div>
-  </footer>
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
