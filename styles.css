@@ -121,3 +121,7 @@ footer {
   padding-right: 20px;
   max-width: calc(100% - 250px); /* Ensures it doesn’t go beyond sidebar */
 }
+
+#carouselExampleIndicators{
+  height: 200px;
+}
