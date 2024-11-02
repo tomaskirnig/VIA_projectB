@@ -7,7 +7,9 @@ const titlesAndCovers = [
 ];
 
 const imgDirectory = 'img/';
+const gallDirectory = 'img/gallery/';
 
+// Index page ------------------------------------------------
 // Creates an album div with an image and a title
 function createAlbum(title, cover) {
   var album = document.createElement('div');
@@ -53,6 +55,37 @@ function showScrollbar(mainContent) {
   mainContent.classList.remove('hide-scrollbar');
 }
 
+// Gallery page ------------------------------------------------
+// Creates a gallery image div with an image and a title
+function createGalleryImage(title, cover) {
+  var galleryImage = document.createElement('div');
+  galleryImage.classList.add('gallery-image');
+
+  var img = document.createElement('img');
+  img.src = cover;
+  img.alt = title;
+  img.classList.add('img-fluid');
+
+  var p = document.createElement('p');
+  p.textContent = title;
+
+  galleryImage.appendChild(img);
+  galleryImage.appendChild(p);
+
+  return galleryImage;
+}
+
+// Creates all the gallery images for the gallery page
+function createGallery() {
+  const gallery_div = document.getElementById('gallery-div');
+
+  for (let i = 0; i < 4; i++) {
+    titlesAndCovers.forEach(element => {
+      var galleryImage = createGalleryImage(element.title, imgDirectory + element.cover);
+      gallery_div.appendChild(galleryImage);
+    });
+  }
+}
 //------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function() {
   const path = window.location.pathname;
@@ -76,11 +109,11 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    // Show scrollbar on scroll, then hide after 4 seconds of inactivity
+    // Show scrollbar on scroll, then hide after 2 seconds of inactivity
     mainContent.addEventListener('scroll', function() {
       showScrollbar(mainContent);
       clearTimeout(mainContent.scrollTimeout); // Reset the timer
-      mainContent.scrollTimeout = setTimeout(() => hideScrollbar(mainContent), 2000); // Hide after 4 seconds
+      mainContent.scrollTimeout = setTimeout(() => hideScrollbar(mainContent), 2000); // Hide after 2 seconds
     });
 
     // Initial call to hide the scrollbar on page load
@@ -89,5 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Code for Form page
   }else if(path.includes('CountDown.html')) {
     // Code for About page
+  }else if (path.includes('Gallery.html')) {
+    createGallery();
   }
 });
