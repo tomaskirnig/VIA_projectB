@@ -1,9 +1,12 @@
 const titlesAndCovers = [
   { "title": "Kanye", "cover": "minion.png" },
   { "title": "Eminem", "cover": "minion.png" },
-  { "title": "Rhyana: The Good Parts", "cover": "minion.png" },
-  { "title": "JCole: The Good Parts", "cover": "minion.png" },
-  { "title": "Mac Miller: The Good Parts", "cover": "minion.png" }
+  { "title": "Rhyana:", "cover": "minion.png" },
+  { "title": "JCole", "cover": "minion.png" },
+  { "title": "2Pac:", "cover": "minion.png" },
+  { "title": "Aurora:", "cover": "minion.png" },
+  { "title": "James:", "cover": "minion.png" },
+  { "title": "Mac Miller: ", "cover": "minion.png" }
 ];
 
 const imgDirectory = 'img/';
@@ -30,15 +33,24 @@ function createArtist(title, cover) {
 }
 
 function createArtistRow() {
+  const artistSection = document.createElement('div');
+  artistSection.classList.add('artist-section');
+
+  const artistHeader = document.createElement('h2');
+  artistHeader.textContent = 'Artists';
+  artistHeader.classList.add('text-light');
+  artistSection.appendChild(artistHeader);
+
   const artists_div = document.createElement('div');
   artists_div.classList.add('album-grid', 'text-light');
 
   titlesAndCovers.forEach(element => {
-    var artist = createArtist(element.title, imgDirectory + element.cover);
+    const artist = createArtist(element.title, imgDirectory + element.cover);
     artists_div.appendChild(artist);
   });
 
-  document.getElementById('main-content').appendChild(artists_div);
+  artistSection.appendChild(artists_div);
+  document.getElementById('artists').appendChild(artistSection);
 }
 
 // Creates an album div with an image and a title
@@ -62,16 +74,24 @@ function createAlbum(title, cover) {
 
 // Creates all the album grids for the title page
 function titlePageAlbums() {
+  const albumSection = document.createElement('div');
+  albumSection.classList.add('album-section');
   for (let i = 0; i < 4; i++) {
-    var albumGrid = document.createElement('div');
+    const albumHeader = document.createElement('h2');
+    albumHeader.textContent = 'Albums';
+    albumHeader.classList.add('text-light');
+    albumSection.appendChild(albumHeader);
+
+    const albumGrid = document.createElement('div');
     albumGrid.classList.add('album-grid', 'text-light');
 
     titlesAndCovers.forEach(element => {
-      var album = createAlbum(element.title, imgDirectory + element.cover);
+      const album = createAlbum(element.title, imgDirectory + element.cover);
       albumGrid.appendChild(album);
     });
 
-    document.getElementById('main-content').appendChild(albumGrid);
+    albumSection.appendChild(albumGrid);
+    document.getElementById('albums').appendChild(albumSection);
   }
 }
 
