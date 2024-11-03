@@ -5,49 +5,147 @@ body {
   font-family: Arial, sans-serif;
 }
 
-#logo-div {
-  width: 80px;
-  height: 80px; 
-    
+.spotify-header {
+  background-color: black;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 80px;
+  justify-content: space-between;
 }
 
 #logo-div img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Keeps image proportions */
+  width: 40px;
+  height: auto;
 }
 
-header {
+.center-container {
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  gap: 20px; /* Space between the heading and search bar */
-  width:90%;
+  align-items: center;
+  gap: 10px;
 }
 
-header input {
-  max-width: 300px; /* Limits width for a neater look */
-  flex-grow: 1; /* Allows the search bar to take up extra space if needed */
+.home-button {
+  background-color: #1f1f1f;
+  border: none;
+  padding: 12px; /* Adjust padding for size */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Makes it a circle */
 }
 
-#sidebar {
+.home-icon {
+  width: 24px; /* Adjust the size as needed */
+  height: 24px;
+}
+
+.search-bar {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 300px;
+  margin: 0 auto; /* Center the search bar in the header */
+}
+
+.search-bar::placeholder {
+  color: #aaa;
+}
+
+.register-btn, .login-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.login-btn {
+  background-color: white;
+  color: black;
+  padding: 5px 15px;
+}
+
+/* #sidebar {
   width: 250px;
   height: 100vh;
   position: fixed;
-  top: 80px;
+  top: 70px;
   left: 5px;
   border-radius: 5px;
   height: calc(100vh - 160px);
+  background-color: #121212;
+} */
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 84vh; */
+  height: calc(100vh - 160px);
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.nav {
+  flex-grow: 1;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #333; /* Optional divider */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  background-color: #121212; /* Matches parent background color */
+  border: 1px solid white; /* White border */
+  border-radius: 20px; /* Rounded corners */
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.language-button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.background-gradient{
+  background: linear-gradient(to bottom, #222222, #0f0f0f);
 }
 
 #main-content {
   border-radius: 5px;
-  margin-left: 260px;
+  margin-left: 5px;
+  margin-right: 5px;
   height: calc(100vh - 160px);
   padding-bottom: 20px; 
 }
@@ -63,6 +161,7 @@ header input {
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #333;
+  border-radius: 5px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -80,12 +179,26 @@ header input {
   scrollbar-width: none;
 }
 
+.artist{
+  width: 160px;
+  height: auto;
+}
+
+.artist img{
+  width: 100%;
+  height: auto;
+  border-radius: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .album-grid {
   padding: 10px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   border-radius: 5px;
+  overflow: hidden;
+  max-height: 225px;
 }
 
 .album {
@@ -111,7 +224,7 @@ footer {
 }
 
 #carouselExampleIndicators{
-  height: 40vh;
+  height: 20vh;
 }
 
 .carousel-inner{
@@ -134,39 +247,37 @@ footer {
 
 #main-content-add-album{
   border-radius: 5px;
-  /* margin-left: 260px; */
+  margin-left: 5px;
   height: calc(100vh - 160px);
-  width: 50%;
-  overflow-y: auto; /* Allows scrolling */
-  padding-bottom: 20px; 
-}
-
-.content-wrapper {
-  margin-left: 260px; /* Width of the sidebar */
-  padding-right: 20px;
-  max-width: calc(100% - 250px); /* Ensures it doesn’t go beyond sidebar */
+  padding-bottom: 20px;
+  height: 450px;
 }
 
 /* Gallery style */
 
 #gallery-div {
+  margin-left: 5px;
+  margin-right: 5px;
   display: flex;
-  flex-wrap: wrap;        /* Allows images to wrap onto new rows */
-  gap: 20px;              /* Adds space between images */
-  justify-content: center; /* Centers the images within the div */
-  padding: 10px;
+  flex-wrap: wrap;
+  max-width: calc(100% - 250px); 
+  gap: 20px;
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 160px); 
+  border-radius: 5px;
+  justify-content: center;
 }
 
 .gallery-image {
-  width: 250px;           /* Controls the width of each image item */
-  height: auto;           /* Maintains the aspect ratio */
+  width: 200px; /* Set a fixed width for each gallery image item */
   text-align: center;
 }
 
 .gallery-image img {
-  width: 100%;            /* Makes the image responsive within its container */
-  height: auto;           /* Ensures aspect ratio is maintained */
-  object-fit: cover;      /* Keeps the image scaled to fit within the container */
+  width: 100%; /* Makes the image fully responsive within its container */
+  height: auto;
+  object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

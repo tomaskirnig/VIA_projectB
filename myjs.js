@@ -1,15 +1,46 @@
 const titlesAndCovers = [
   { "title": "Kanye", "cover": "minion.png" },
   { "title": "Eminem", "cover": "minion.png" },
-  { "title": "JavaScript: The Good Parts", "cover": "minion.png" },
-  { "title": "JavaScript: The Good Parts", "cover": "minion.png" },
-  { "title": "JavaScript: The Good Parts", "cover": "minion.png" }
+  { "title": "Rhyana: The Good Parts", "cover": "minion.png" },
+  { "title": "JCole: The Good Parts", "cover": "minion.png" },
+  { "title": "Mac Miller: The Good Parts", "cover": "minion.png" }
 ];
 
 const imgDirectory = 'img/';
 const gallDirectory = 'img/gallery/';
 
 // Index page ------------------------------------------------
+// Create artist div with an image and a title
+function createArtist(title, cover) {
+  var artist = document.createElement('div');
+  artist.classList.add('artist');
+
+  var img = document.createElement('img');
+  img.src = cover;
+  img.alt = title;
+  img.classList.add('img-fluid');
+
+  var p = document.createElement('p');
+  p.textContent = title;
+
+  artist.appendChild(img);
+  artist.appendChild(p);
+
+  return artist;
+}
+
+function createArtistRow() {
+  const artists_div = document.createElement('div');
+  artists_div.classList.add('album-grid', 'text-light');
+
+  titlesAndCovers.forEach(element => {
+    var artist = createArtist(element.title, imgDirectory + element.cover);
+    artists_div.appendChild(artist);
+  });
+
+  document.getElementById('main-content').appendChild(artists_div);
+}
+
 // Creates an album div with an image and a title
 function createAlbum(title, cover) {
   var album = document.createElement('div');
@@ -40,7 +71,6 @@ function titlePageAlbums() {
       albumGrid.appendChild(album);
     });
 
-    // Append this album grid to the main content area
     document.getElementById('main-content').appendChild(albumGrid);
   }
 }
@@ -95,6 +125,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let isPlaying = false;
     const mainContent = document.getElementById('main-content');
     
+    createArtistRow();
+
     titlePageAlbums();
     
     playButton.addEventListener('click', function() {
