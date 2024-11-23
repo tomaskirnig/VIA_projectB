@@ -63,22 +63,25 @@
     <!-- Countdown Main Content -->
     <div class="content-wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1 text-center">
         <h1 class="text-light mb-4">Countdown to Event</h1>
-        <div class="countdown-timer background-gradient text-light p-5 rounded" style="width: 100%; max-width: 500px;">
-        <div class="row">
+        <div id="countdown" class="countdown-timer background-gradient text-light p-5 rounded" style="width: 100%; max-width: 500px;">
+          <div class="row">
+            <h2 id="timeIsUp" class="display-4"></h2>
+          </div>
+          <div class="row">
             <div class="col">
-                <h2 id="days" class="display-4">00</h2>
+                <h2 id="days" class="display-4">0</h2>
                 <p>Days</p>
             </div>
             <div class="col">
-                <h2 id="hours" class="display-4">00</h2>
+                <h2 id="hours" class="display-4">0</h2>
                 <p>Hours</p>
             </div>
             <div class="col">
-                <h2 id="minutes" class="display-4">00</h2>
+                <h2 id="minutes" class="display-4">0</h2>
                 <p>Minutes</p>
             </div>
             <div class="col">
-                <h2 id="seconds" class="display-4">00</h2>
+                <h2 id="seconds" class="display-4">0</h2>
                 <p>Seconds</p>
             </div>
         </div>
