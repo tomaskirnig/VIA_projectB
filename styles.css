@@ -332,3 +332,167 @@ footer {
 .lightbox-close:hover {
   color: red; /* Optional: Highlight on hover */
 }
+
+/* Premium page*/
+#body-prem{
+  background-color: #121212;
+  /* font-family: 'Arial', sans-serif; */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#header-prem {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo-div-prem{
+  display: flex;
+  align-items: center;
+  /* margin-left: 5%; */
+}
+
+#logo-div-prem img {
+  width: 40px;
+  margin-right: 10px;
+  height: auto;
+}
+
+#logo-div-prem h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+ 
+#nav-prem {
+  display: flex;
+  gap: 5px;
+  margin-right: 10%;
+}
+
+.hero-section {
+  background: 
+    /* url('img/premiumLogo.png') right top no-repeat, Add your image */
+    linear-gradient(to bottom, #7d2f95, #121212); /* Gradient overlay */
+  background-size: 250px auto, cover; /* Adjust image size and gradient */
+  background-position: right top, center; /* Adjust positions */
+  padding: 100px 0;
+  width: 100%;
+  color: white;
+}
+
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(to bottom,  #7d2f95 0%, #121212 40%);
+  color: white;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 60%; 
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  margin-left: 10%;
+}
+
+.hero-text small {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.hero-text div button{
+  border-radius: 20px;
+}
+
+.hero-text div .btn-primary{
+  background-color: #7d2f95;
+  border: none;
+}
+
+.hero-text div button.btn-primary:hover{
+  background-color: #622375;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 300px; /* Adjust the size of the image */
+  height: auto;
+}
+
+
+#statement{
+  width: 60%;
+}
+
+.features-section {
+  background-color: #222;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+footer {
+  background-color: black;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* When viewport is smaller than 300px, make the image a background */
+@media (max-width: 500px) {
+  .hero-section {
+    background: 
+      url('img/premiumLogo.png') top no-repeat, 
+      linear-gradient(to bottom, #7d2f95 0%, #121212 50%);
+    background-size: contain; /* Ensure the image fits within the section */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: block; /* Switch to block layout */
+  }
+
+  .hero-image {
+    display: none; /* Hide the separate image */
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+}

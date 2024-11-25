@@ -226,7 +226,67 @@ function createGallery() {
     });
   }
 }
+
+// Form page ------------------------------------------------
+
+function setupForm() {
+  const albumForm = document.getElementById("albumForm");
+  const songForm = document.getElementById("songForm");
+
+  // Handle album form submission
+  albumForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the form from refreshing the page
+
+    const albumTitle = document.getElementById("albumTitle").value.trim();
+    const albumCover = document.getElementById("albumCover").value.trim();
+
+    // Validate inputs
+    if (!albumTitle || !albumCover) {
+      alert("Please fill in all fields for the album.");
+      return;
+    }
+
+    // Display the input under the form
+    const outputDiv = document.createElement("div");
+    outputDiv.innerHTML = `
+      <p><strong>Album Title:</strong> ${albumTitle}</p>
+      <p><strong>Album Cover:</strong> ${albumCover}</p>
+    `;
+    albumForm.appendChild(outputDiv);
+
+    // Clear the form
+    albumForm.reset();
+  });
+
+  songForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the form from refreshing the page
+
+    const songName = document.getElementById("songName").value.trim();
+    const songAlbum = document.getElementById("songAlbum").value.trim();
+    const songInterpret = document.getElementById("songInterpret").value.trim();
+
+    // Validate inputs
+    if (!songName || !songAlbum || !songInterpret) {
+      alert("Please fill in all fields for the song.");
+      return;
+    }
+
+    // Display the input under the form
+    const outputDiv = document.createElement("div");
+    outputDiv.innerHTML = `
+      <p><strong>Song Name:</strong> ${songName}</p>
+      <p><strong>Album:</strong> ${songAlbum}</p>
+      <p><strong>Interpret:</strong> ${songInterpret}</p>
+    `;
+    songForm.appendChild(outputDiv);
+
+    // Clear the form
+    songForm.reset();
+  });
+}
+
 //------------------------------------------------------------
+
 document.addEventListener("DOMContentLoaded", function() {
   const path = window.location.pathname;
 
@@ -261,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initial call to hide the scrollbar on page load
     setTimeout(() => hideScrollbar(mainContent), 2000);
   }else if(path.includes('Form.html')) {
-    // Code for Form page
+    setupForm();
   }else if(path.includes('CountDown.html')) {
     countdown();
   }else if (path.includes('Gallery.html')) {
