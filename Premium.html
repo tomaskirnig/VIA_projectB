@@ -15,12 +15,12 @@
       <h1>Spotify</h1>
     </div>
     <nav id="nav-prem">
-      <a href="#" class="text-light mx-2">Premium</a>
-      <a href="#" class="text-light mx-2">Podpora</a>
-      <a href="#" class="text-light mx-2">Ke stažení</a>
-      <span id="pipeNav">|</span>
-      <a href="#" class="text-light mx-2">Registrace</a>
-      <a href="#" class="text-light mx-2">Přihlásit se</a>
+      <a href="#" class="mx-3">Premium</a>
+      <a href="#" class="mx-3">Podpora</a>
+      <a href="#" class="mx-3">Ke stažení</a>
+      <span class="mx-3">|</span>
+      <a href="#" class="mx-3">Registrace</a>
+      <a href="#" class="mx-3">Přihlásit se</a>
     </nav>
   </header>
 
@@ -34,7 +34,7 @@
           <button class="btn btn-primary px-4">Začít</button>
           <button class="btn btn-outline-light px-4">Zobrazit všechny varianty předplatného</button>
         </div>
-        <small>Pouze Premium Individual. 0 Kč na 3 měsíce, potom 169 Kč za měsíc. Nabídka je určena jen pro ty, kdo Premium ještě nevyzkoušeli. Platí podmínky služby.
+        <small>Pouze Premium Individual. 0 Kč na 3 měsíce, potom 169 Kč za měsíc. Nabídka je určena jen pro ty, kdo Premium ještě nevyzkoušeli. <a>Platí podmínky služby.</a>
             Nabídka končí 31. prosince 2024</small>
       </div>
       <div class="hero-image">
@@ -42,12 +42,141 @@
       </div>
     </div>
   </section>
+
+  <section class="features1 text-light text-center py-5">
+    <h2 class="mb-4">Dostupné předplatné pro každou situaci</h2>
+    <p>Vyber si předplatné Premium a neomezeně poslouchej hudbu bez reklam přes telefon, reproduktory a další zařízení. Platit můžeš různými způsoby. Zrušíš kdykoli.</p>
+    <div class="payment-methods d-flex justify-content-center gap-2 my-4">
+      <img src="img/visa.png" alt="Visa" class="payment-icon">
+      <img src="img/mastercard.png" alt="MasterCard" class="payment-icon">
+      <img src="img/amex.png" alt="American Express" class="payment-icon">
+      <img src="img/paypal.png" alt="PayPal" class="payment-icon">
+    </div>
+    <div class="side-by-side">
+      <h3 class="mt-5">Všechny varianty předplatného Premium zahrnují</h3>
+      <ul class="premium-features list-unstyled text-start mx-auto mt-4" style="max-width: 600px;">
+        <li>✓ Poslech hudby bez reklam</li>
+        <li>✓ Stahování pro poslech offline</li>
+        <li>✓ Přehrávání skladeb v libovolném pořadí</li>
+        <li>✓ Vysoká kvalita zvuku</li>
+        <li>✓ Poslech společně s přáteli v reálném čase</li>
+        <li>✓ Organizování fronty poslechu</li>
+      </ul>
+    </div>
+  </section>
   
 
+  <!-- Pricing Section -->
+  <section class="pricing py-5">
+    <div class="container">
+      <!-- Individual Plan -->
+      <div class="pricing-card" id="pricing-card1">
+        <div class="pricing-badge">O Kč na 3 měsíce</div>
+        <div class="pricing-content">
+          <div class="pricing-logo-div">
+            <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
+            <p>Premium</p>
+          </div>
+          <h3 class="pricing-title">Individual</h3>
+          <p class="pricing-price">O Kč na 3 měsíce</p>
+          <p class="pricing-subtext">Potom 169 Kč/měsíc</p>
+          <hr>
+          <ul class="pricing-features">
+            <li>1 účet Premium</li>
+            <li>Možnost kdykoli zrušit</li>
+          </ul>
+          <div class="pricing-button-container">
+            <button class="btn btn-primary pricing-button">Vyzkoušej 3 měsíce za O Kč</button>
+          </div>
+          <p class="pricing-footer">
+            O Kč na 3 měsíce, potom 169 Kč za měsíc. Nabídka je určena jen pro ty, kdo Premium ještě nevyzkoušeli. <a href="#">Platí podmínky služby.</a><br>
+            Nabídka končí 31. prosince 2024.
+          </p>
+        </div>
+      </div>
+  
+      <!-- Student Plan -->
+      <div class="pricing-card" id="pricing-card2">
+        <div class="pricing-badge">O Kč na 1 měsíc</div>
+        <div class="pricing-content">
+          <div class="pricing-logo-div">
+            <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
+            <p>Premium</p>
+          </div>
+          <h3 class="pricing-title">Student</h3>
+          <p class="pricing-price">O Kč na 1 měsíc</p>
+          <p class="pricing-subtext">Potom 89 Kč/měsíc</p>
+          <hr>
+          <ul class="pricing-features">
+            <li>Jeden ověřený účet Premium</li>
+            <li>Sleva pro studenty, kteří splňují podmínky</li>
+            <li>Možnost kdykoli zrušit</li>
+          </ul>
+          <div class="pricing-button-container">
+            <button class="btn btn-primary pricing-button">Vyzkoušej 1 měsíc za O Kč</button>
+          </div>
+          <p class="pricing-footer">
+            O Kč na 1 měsíc, potom 89 Kč za měsíc. Nabídka je určena pouze pro studenty akreditovaných institucí vyššího vzdělání, kteří Premium ještě nevyzkoušeli. <a href="#">Platí podmínky služby.</a>
+          </p>
+        </div>
+      </div>
+  
+      <!-- Duo Plan -->
+      <div class="pricing-card" id="pricing-card3">
+        <div class="pricing-badge">229 Kč/měsíc</div>
+        <div class="pricing-content">
+          <div class="pricing-logo-div">
+            <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
+            <p>Premium</p>
+          </div>
+          <h3 class="pricing-title">Duo</h3>
+          <p class="pricing-price">229 Kč/měsíc</p>
+          <hr>
+          <ul class="pricing-features">
+            <li>2 účty Premium</li>
+            <li>Možnost kdykoli zrušit</li>
+          </ul>
+          <div class="pricing-button-container">
+            <button class="btn btn-warning pricing-button">Pořiď Premium Duo</button>
+          </div>
+          <p class="pricing-footer">
+            Pro dvojice, které bydlí na stejné adrese. <a href="#">Platí podmínky služby.</a>
+          </p>
+        </div>
+      </div>
+  
+      <!-- Family Plan -->
+      <div class="pricing-card" id="pricing-card4">
+        <div class="pricing-badge">269 Kč/měsíc</div>
+        <div class="pricing-content">
+          <div class="pricing-logo-div">
+            <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
+            <p>Premium</p>
+          </div>
+          <h3 class="pricing-title">Family</h3>
+          <p class="pricing-price">269 Kč/měsíc</p>
+          <hr>
+          <ul class="pricing-features">
+            <li>Počet účtů Premium: až 6</li>
+            <li>Možnost kontrolovat přehrávání obsahu označeného jako explicitní</li>
+            <li>Možnost kdykoli zrušit</li>
+          </ul>
+          <div class="pricing-button-container">
+            <button class="btn btn-info pricing-button">Pořiď Premium Family</button>
+          </div>
+          <p class="pricing-footer">
+            Pro členy rodiny (až 6), kteří bydlí na stejné adrese. <a href="#">Platí podmínky služby.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Features Section -->
-  <section class="features text-light text-center py-5">
+  <section class="features2 text-light text-center py-5">
     <h2 class="mb-4">Zažij ten rozdíl</h2>
-    <table class="table table-dark table-striped mx-auto" style="max-width: 800px;">
+    <p>Přejdi na Premium a užij si úplnou kontrolu nad svým poslechem. Zrušíš kdykoli.</p>
+    <table class="table mx-auto">
       <thead>
         <tr>
           <th>Co získáš</th>
@@ -57,22 +186,32 @@
       </thead>
       <tbody>
         <tr>
-          <td>Poslech hudby bez reklam</td>
+          <th>Poslech hudby bez reklam</th>
           <td>—</td>
           <td>✓</td>
         </tr>
         <tr>
-          <td>Stahování pro poslech offline</td>
+          <th>Stahování pro poslech offline</th>
           <td>—</td>
           <td>✓</td>
         </tr>
         <tr>
-          <td>Přehrávání skladeb v libovolném pořadí</td>
+          <th>Přehrávání skladeb v libovolném pořadí</th>
           <td>—</td>
           <td>✓</td>
         </tr>
         <tr>
-          <td>Vysoká kvalita zvuku</td>
+          <th>Vysoká kvalita zvuku</th>
+          <td>—</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <th>Poslech společně s přáteli v reálném čase</th>
+          <td>—</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <th>Organizování fronty poslechu</th>
           <td>—</td>
           <td>✓</td>
         </tr>
@@ -80,46 +219,107 @@
     </table>
   </section>
 
-  <!-- Pricing Section -->
-  <section class="pricing text-light py-5">
-    <h2 class="text-center mb-5">Dostupné předplatné pro každou situaci</h2>
-    <div class="d-flex justify-content-center gap-4">
-      <div class="card bg-dark text-light p-3">
-        <h3>Individual</h3>
-        <p>Kč 169/měsíc</p>
-        <button class="btn btn-success">Vyzkoušej 3 měsíce zdarma</button>
-      </div>
-      <div class="card bg-dark text-light p-3">
-        <h3>Family</h3>
-        <p>Kč 269/měsíc</p>
-        <button class="btn btn-primary">Pořídit</button>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ Section -->
   <section class="faq py-5">
     <h2 class="text-light text-center mb-4">Máš nějaké otázky?</h2>
     <div class="accordion accordion-flush" id="faqAccordion">
+      <!-- FAQ Item 1 -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-            Jak funguje zkušební verze?
+            Jak funguje zkušební verze předplatného Spotify Premium?
           </button>
         </h2>
         <div id="faq1" class="accordion-collapse collapse">
-          <div class="accordion-body">Zkušební verze trvá 3 měsíce...</div>
+          <div class="accordion-body">
+            Pokud jde o tvoji první zkušenost s předplatným Premium, můžeš si ho vyzkoušet zdarma nebo za sníženou cenu.<br><br>
+            I u zkušební verze musíš při registraci zadat platný způsob platby. Ten použijeme k ověření tvojí země nebo regionu a k platbám v případě, že si po skončení nabídky budeš chtít Premium ponechat.<br><br>
+            Sedm dní před koncem zkušební verze ti pošleme upozornění. Platí podmínky a omezení pro konkrétní země.
+          </div>
         </div>
       </div>
-      <!-- Add more FAQ items here -->
+  
+      <!-- FAQ Item 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            Jak můžu zrušit svoje předplatné Premium?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Předplatné Premium můžeš kdykoli snadno zrušit online na stránce svého účtu.<br><br>
+            Zaplacené předplatné Premium bude po zrušení fungovat až do dalšího data fakturace, potom bude tvůj účet převeden na naši bezplatnou službu.<br><br>
+            Pokud předplatné zrušíš v průběhu bezplatného zkušebního období, ihned ztratíš přístup ke svým výhodám Premium a tvůj účet bude převeden na naši bezplatnou službu. Bezplatné zkušební verze nelze znovu aktivovat.<br><br>
+            V bezplatné službě ti zůstanou všechny playlisty i uložená hudba a budeš poslouchat s reklamami.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Jak funguje předplatné Premium Duo?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Premium Duo je předplatné pro dva lidi, kteří bydlí spolu. V porovnání s dvěma účty Premium Individual za plnou cenu je také levnější.<br><br>
+            Abychom se ujistili, že skutečně bydlíte společně, požádáme tě o adresu. Ihned po zakoupení můžeš do předplatného pozvat druhého člena. Každý člen bude mít svůj samostatný účet Premium a může poslouchat současně s vlastním účtem. Každý má svoji vlastní uloženou hudbu a playlisty. Co posloucháš, další vlastník účtu neuvidí.<br><br>
+            Další informace o předplatném Premium Duo.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            Jak funguje předplatné Premium Family?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Premium Family je předplatné pro až šest členů rodiny, kteří bydlí spolu. V porovnání s tím, kdy by každý měl vlastní účet Premium Individual za plnou cenu, je také levnější.<br><br>
+            Abychom se ujistili, že skutečně bydlíte společně, požádáme tě o adresu. Ihned po zakoupení můžeš do předplatného pozvat další členy. Každý člen bude mít svůj samostatný účet Premium a může poslouchat současně s vlastním účtem. Každý má svoji vlastní uloženou hudbu a playlisty. Co posloucháš, další vlastníci účtů neuvidí.<br><br>
+            Další informace o předplatném Premium Family.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Jak funguje předplatné Premium Student?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Pokud jsi aktivním studentem akreditované vyšší odborné nebo vysoké školy a je ti aspoň 18 let, tak ano. Předplatné Premium Student můžeš využívat až 4 roky.<br><br>
+            Další informace o předplatném Premium Student.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ Item 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+            Česká republika: kolik tu stojí Spotify Premium?
+          </button>
+        </h2>
+        <div id="faq6" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Ceny Spotify Premium v téhle zemi (Česká republika) se liší podle toho, které předplatné Premium si vybereš: předplatné Spotify Premium Individual stojí 169 Kč za měsíc, předplatné Premium Duo stojí 229 Kč za měsíc, předplatné Premium Family stojí 269 Kč za měsíc, předplatné Premium Student stojí 89 Kč za měsíc.<br><br>
+            Pokud jde o tvoji první zkušenost s předplatným Premium, můžeš si ho vyzkoušet zdarma nebo za sníženou cenu. Platí podmínky a omezení pro konkrétní země.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-light text-center py-3">
-    <p>&copy; 2024 Spotify</p>
-  </footer>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

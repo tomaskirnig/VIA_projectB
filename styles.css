@@ -1,3 +1,11 @@
+:root {
+  --pricing-card1: #ffd2d7;
+  --pricing-card2: #c4b1d4;
+  --pricing-card3: #ffc862;
+  --pricing-card4: #a5bbd1;
+}
+
+
 body {
   background-color: black;
   margin: 0;
@@ -343,6 +351,7 @@ footer {
 }
 
 #header-prem {
+  position: static;
   background-color: black;
   padding: 20px;
   display: flex;
@@ -371,13 +380,21 @@ footer {
 #nav-prem {
   display: flex;
   gap: 5px;
-  margin-right: 10%;
+  margin-right: 2vw;
+}
+
+#nav-prem a {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+}
+
+#nav-prem a:hover {
+  color: #1ccf05;
 }
 
 .hero-section {
-  background: 
-    /* url('img/premiumLogo.png') right top no-repeat, Add your image */
-    linear-gradient(to bottom, #7d2f95, #121212); /* Gradient overlay */
+  background: linear-gradient(to bottom, #7d2f95, #121212); /* Gradient overlay */
   background-size: 250px auto, cover; /* Adjust image size and gradient */
   background-position: right top, center; /* Adjust positions */
   padding: 100px 0;
@@ -385,12 +402,11 @@ footer {
   color: white;
 }
 
-
 .hero-section {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
-  padding: 50px;
+  padding: 30px;
   background: linear-gradient(to bottom,  #7d2f95 0%, #121212 40%);
   color: white;
 }
@@ -409,14 +425,14 @@ footer {
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 .hero-text p {
   font-size: 1.5rem;
   margin-bottom: 30px;
-  margin-left: 10%;
 }
 
 .hero-text small {
@@ -426,8 +442,14 @@ footer {
   color: #ccc;
 }
 
+.hero-text small a {
+  text-decoration: underline;
+  cursor: pointer; 
+}
+
 .hero-text div button{
-  border-radius: 20px;
+  border-radius: 40px;
+  font-weight: 600;
 }
 
 .hero-text div .btn-primary{
@@ -439,11 +461,21 @@ footer {
   background-color: #622375;
 }
 
+.hero-text div button.btn-outline-light:hover{
+  background-color: transparent;
+  color: white;
+}
+
+.hero-text div button:hover{
+ transform: scale(1.05);
+}
+
 .hero-image {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 30%;
 }
 
 .hero-image img {
@@ -456,14 +488,277 @@ footer {
   width: 60%;
 }
 
-.features-section {
-  background-color: #222;
+.features1 {
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: #121212; /* Matches the Premium page theme */
+  color: white;
 }
 
-.feature-icon {
-  width: 60px;
+.features1 h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.features1 p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+.payment-methods .payment-icon {
+  height: 37px;
+  width: auto;
+  border-radius: 5px;
+}
+
+.side-by-side{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.premium-features {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.premium-features li {
+  margin-bottom: 10px;
+}
+
+.features2 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.features2 table{
+  color: white;
+  row-gap: 10px;
+}
+
+.features2 table tbody tr{
   height: 60px;
+}
+
+.features2 table tbody tr:hover{
+  background-color: #1f1f1f;
+}
+
+.features2 table tbody td, th{
+  vertical-align: middle;
+}
+
+.features2 table tbody th{
+  text-align: left;
+  text-decoration: dashed underline 1px;
+  font-weight: 500;
+}
+
+.features2 table tbody tr:hover td:last-child {
+  background-color: #3a3a3a; 
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  justify-content: center; /* Centers the cards in the row */
+  gap: 20px; /* Adds space between cards */
+}
+
+.pricing {
+  background-color: #121212; 
+}
+
+.pricing-card {
+  position: relative;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 20px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-color: #ffb3c1; */
+  color: black;
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  border-radius: 10px 0 10px 0;
   margin-bottom: 15px;
+}
+
+.pricing-logo-div{
+  margin-top: 30px;
+  display: flex;
+  justify-content: left;
+}
+
+.pricing-logo {
+  width: 25px;
+  border-radius: 100%;
+  margin-bottom: 15px;
+  margin-right: 5px;
+}
+
+.pricing-title {
+  /* color: #ffb3c1; */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pricing-price {
+  font-size: 1.2rem;
+  font-weight: 550;
+  margin: 0;
+}
+
+.pricing-subtext {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.pricing-features {
+  padding: 0;
+  margin-left: 20px;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.pricing-button-container{
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-button {
+  /* background-color: #ffb3c1; */
+  color: black;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: auto;
+}
+
+.pricing-button:hover {
+  color: black;
+  /* background-color: #ffb3c1; */
+  transform: scale(1.05);
+}
+
+.pricing-footer {
+  font-size: 0.7rem;
+  color: #999;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pricing-footer a {
+  color: #999;
+  text-decoration: underline;
+}
+/* Card1 */
+#pricing-card1 .pricing-badge {
+  background-color: var(--pricing-card1);
+}
+
+#pricing-card1 .pricing-title{
+  color: var(--pricing-card1);
+}
+
+#pricing-card1 .pricing-button{
+  background-color: var(--pricing-card1);
+}
+
+#pricing-card1 .pricing-button{
+  background-color: var(--pricing-card1);
+}
+
+#pricing-card1 .pricing-button:hover{
+  background-color: var(--pricing-card1);
+}
+
+/* Card2 */
+#pricing-card2 .pricing-badge {
+  background-color: var(--pricing-card2);
+}
+
+#pricing-card2 .pricing-title{
+  color: var(--pricing-card2);
+}
+#pricing-card2 .pricing-button{
+  background-color: var(--pricing-card2);
+}
+
+#pricing-card2 .pricing-button{
+  background-color: var(--pricing-card2);
+}
+
+#pricing-card2 .pricing-button:hover{
+  background-color: var(--pricing-card2);
+}
+
+/* Card3 */
+#pricing-card3 .pricing-badge {
+  background-color: var(--pricing-card3);
+}
+
+#pricing-card3 .pricing-title{
+  color: var(--pricing-card3);
+}
+#pricing-card3 .pricing-button{
+  background-color: var(--pricing-card3);
+}
+
+#pricing-card3 .pricing-button{
+  background-color: var(--pricing-card3);
+}
+
+#pricing-card3 .pricing-button:hover{
+  background-color: var(--pricing-card3);
+}
+
+/* Card4 */
+#pricing-card4 .pricing-badge {
+  background-color: var(--pricing-card4);
+}
+
+#pricing-card4 .pricing-title{
+  color: var(--pricing-card4);
+}
+
+#pricing-card4 .pricing-button{
+  background-color: var(--pricing-card4);
+}
+
+#pricing-card4 .pricing-button{
+  background-color: var(--pricing-card4);
+}
+
+#pricing-card4 .pricing-button:hover{
+  background-color: var(--pricing-card4);
+}
+
+.faq{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.accordion-header{
+  color: white;
+}
+
+.accordion-button{
+  color: white;
+  background-color: #121212;
 }
 
 footer {
@@ -494,5 +789,17 @@ footer {
 
   .hero-text {
     max-width: 100%;
+  }
+}
+
+/* For wider viewports */
+@media (min-width: 1200px) {
+  .container {
+    justify-content: space-between; /* Distributes cards evenly */
+  }
+
+  .pricing-card {
+    /* width: calc(33.33% - 20px);  */
+    width: 350px; 
   }
 }
