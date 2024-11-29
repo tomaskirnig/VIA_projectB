@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spotify Premium</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="body-prem">
@@ -12,7 +13,7 @@
   <header id="header-prem" class="d-flex justify-content-between align-items-center p-3 bg-black">
     <div id="logo-div-prem">
       <img src="img/spotify.png" alt="Spotify Logo" class="logo">
-      <h1>Spotify</h1>
+      <h1><a href="index.html">Spotify</a></h1>
     </div>
     <nav id="nav-prem">
       <a href="#" class="mx-3">Premium</a>
@@ -77,9 +78,11 @@
             <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
             <p>Premium</p>
           </div>
-          <h3 class="pricing-title">Individual</h3>
-          <p class="pricing-price">O Kč na 3 měsíce</p>
-          <p class="pricing-subtext">Potom 169 Kč/měsíc</p>
+          <div class="pricing-top">
+            <h3 class="pricing-title">Individual</h3>
+            <p class="pricing-price">O Kč na 3 měsíce</p>
+            <p class="pricing-subtext">Potom 169 Kč/měsíc</p>
+          </div>
           <hr>
           <ul class="pricing-features">
             <li>1 účet Premium</li>
@@ -103,9 +106,11 @@
             <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
             <p>Premium</p>
           </div>
-          <h3 class="pricing-title">Student</h3>
-          <p class="pricing-price">O Kč na 1 měsíc</p>
-          <p class="pricing-subtext">Potom 89 Kč/měsíc</p>
+          <div class="pricing-top">
+            <h3 class="pricing-title">Student</h3>
+            <p class="pricing-price">O Kč na 1 měsíc</p>
+            <p class="pricing-subtext">Potom 89 Kč/měsíc</p>
+          </div>
           <hr>
           <ul class="pricing-features">
             <li>Jeden ověřený účet Premium</li>
@@ -129,8 +134,10 @@
             <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
             <p>Premium</p>
           </div>
-          <h3 class="pricing-title">Duo</h3>
-          <p class="pricing-price">229 Kč/měsíc</p>
+          <div class="pricing-top">
+            <h3 class="pricing-title">Duo</h3>
+            <p class="pricing-price">229 Kč/měsíc</p>
+          </div>
           <hr>
           <ul class="pricing-features">
             <li>2 účty Premium</li>
@@ -153,8 +160,10 @@
             <img src="img/spotify.png" alt="Spotify Premium Logo" class="pricing-logo">
             <p>Premium</p>
           </div>
-          <h3 class="pricing-title">Family</h3>
-          <p class="pricing-price">269 Kč/měsíc</p>
+          <div class="pricing-top">
+            <h3 class="pricing-title">Family</h3>
+            <p class="pricing-price">269 Kč/měsíc</p>
+          </div>
           <hr>
           <ul class="pricing-features">
             <li>Počet účtů Premium: až 6</li>
@@ -222,6 +231,7 @@
   <!-- FAQ Section -->
   <section class="faq py-5">
     <h2 class="text-light text-center mb-4">Máš nějaké otázky?</h2>
+    <p class="text-center">My máme odpovědi. <br> Další odpovědi najdeš na naší stránce podpory.</p>
     <div class="accordion accordion-flush" id="faqAccordion">
       <!-- FAQ Item 1 -->
       <div class="accordion-item">
@@ -319,7 +329,92 @@
       </div>
     </div>
   </section>
+
+  <footer class="spotify-footer bg-black">
+    <div class="container py-5">
+      <div class="row">
+        <!-- Spotify Logo and Main Links -->
+        <div id="spotify-footer-logo" class="col-md-2">
+          <a href="index.html">
+            <img src="img/spotify.png" alt="Spotify Logo" class="mb-3">
+            <p>Spotify</p>
+          </a>
+        </div>
   
+        <!-- Company Info -->
+        <div class="col-md-2">
+          <h6>SPOLEČNOST</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" >O nás</a></li>
+            <li><a href="#" >Pracovní místa</a></li>
+            <li><a href="#" >For the Record</a></li>
+          </ul>
+        </div>
+  
+        <!-- Community -->
+        <div class="col-md-2">
+          <h6>KOMUNITY</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" >Pro umělce</a></li>
+            <li><a href="#" >Vývojáři</a></li>
+            <li><a href="#" >Reklama</a></li>
+            <li><a href="#" >Investoři</a></li>
+            <li><a href="#" >Dodavatelé</a></li>
+          </ul>
+        </div>
+  
+        <!-- Useful Links -->
+        <div class="col-md-2">
+          <h6>UŽITEČNÉ ODKAZY</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" >Podpora</a></li>
+            <li><a href="#" >Webový přehrávač</a></li>
+            <li><a href="#" >Bezplatná mobilní aplikace</a></li>
+          </ul>
+        </div>
+  
+        <!-- Plans -->
+        <div class="col-md-2">
+          <h6>PŘEDPLATNÁ SPOTIFY</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" >Premium Individual</a></li>
+            <li><a href="#" >Premium Duo</a></li>
+            <li><a href="#" >Premium Family</a></li>
+            <li><a href="#" >Premium Student</a></li>
+            <li><a href="#" >Spotify Free</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Social Icons -->
+      <div class="row mt-4">
+        <div class="premium-contacts-icons col-12 d-block justify-content-between align-items-center">
+          <div>
+            <a href="#" class=" me-3"><span class="bi bi-instagram"></span></a>
+            <a href="#" class=" me-3"><span class="bi bi-twitter"></span></a>
+            <a href="#"><span class="bi bi-facebook"></span></a>
+          </div>
+          <p>Česká republika</p>
+        </div>
+      </div>
+
+      <!-- Other links -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" >Právní sdělení</a></li>
+            <li class="list-inline-item"><a href="#" >Centrum zabezpečení a soukromí</a></li>
+            <li class="list-inline-item"><a href="#" >Zásady ochrany osobních údajů</a></li>
+            <li class="list-inline-item"><a href="#" >Nastavení souborů cookie</a></li>
+            <li class="list-inline-item"><a href="#" >Reklamy</a></li>
+            <li class="list-inline-item"><a href="#" >Usnadnění přístupu</a></li>
+            <li class="list-inline-item"><a href="#">© 2024 Spotify AB</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

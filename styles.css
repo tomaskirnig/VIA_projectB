@@ -103,6 +103,32 @@ body {
   flex-grow: 1;
 }
 
+.nav li:hover{
+  font-weight: 600;
+}
+
+#sidebar ul ul {
+  display: none; /* Hide submenus by default */
+  padding-left: 15px; /* Indent submenus */
+}
+
+#sidebar ul li:hover > ul {
+  display: block; /* Show submenu on hover */
+}
+
+#sidebar ul ul li {
+  margin-top: 5px; /* Add spacing between sub-items */
+}
+
+#sidebar ul ul .nav-link {
+  font-size: 0.9rem; /* Slightly smaller font for sub-items */
+  color: #b3b3b3;
+}
+
+#sidebar ul ul .nav-link:hover {
+  color: white; /* Highlight sub-items on hover */
+}
+
 .sidebar-footer {
   margin-top: auto;
   padding-top: 20px;
@@ -377,6 +403,11 @@ footer {
   margin: 0;
 }
  
+#logo-div-prem h1 a{
+  text-decoration: none;
+  color: white;
+}
+
 #nav-prem {
   display: flex;
   gap: 5px;
@@ -529,8 +560,18 @@ footer {
 }
 
 .features2 {
-  width: 50%;
+  width: 450px;
   margin: 0 auto;
+}
+
+.features2 h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.features2 p{
+  font-weight: 400;
 }
 
 .features2 table{
@@ -564,7 +605,7 @@ footer {
   display: flex;
   flex-wrap: wrap; /* Allows cards to wrap to the next line */
   justify-content: center; /* Centers the cards in the row */
-  gap: 20px; /* Adds space between cards */
+  gap: 20px;
 }
 
 .pricing {
@@ -606,6 +647,10 @@ footer {
   margin-right: 5px;
 }
 
+.pricing-top{
+  height: 100px;
+}
+
 .pricing-title {
   /* color: #ffb3c1; */
   font-size: 2rem;
@@ -629,6 +674,7 @@ footer {
   padding: 0;
   margin-left: 20px;
   font-size: 0.95rem;
+  height: 90px;
   color: white;
 }
 
@@ -644,8 +690,10 @@ footer {
   border-radius: 30px;
   padding: 10px 20px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   margin: auto;
+  width: 100%;
 }
 
 .pricing-button:hover {
@@ -748,17 +796,154 @@ footer {
 }
 
 .faq{
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
 
+.accordion-item{
+  border-bottom: 2px solid #303030;
+}
+
 .accordion-header{
-  color: white;
+  color: #121212;
 }
 
 .accordion-button{
+  height: 60px;
+  font-weight: 750;
   color: white;
   background-color: #121212;
+}
+
+.accordion-button:hover{
+  background-color: #2a2a2a;
+  text-decoration: underline;
+}
+
+.accordion-button:not(.collapsed) {
+  font-weight: 700;
+  color: white;
+  background-color: #2a2a2a; 
+}
+
+.accordion-button:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: none; /* Removes the blue focus ring for Bootstrap */
+}
+
+.accordion-button::after {
+  filter: invert(1); 
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: invert(1) brightness(5);
+}
+
+.accordion-body{
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.spotify-footer {
+  position: relative;
+  color: white;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+#spotify-footer-logo a{
+  display: flex;
+  justify-content: center;
+}
+
+#spotify-footer-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+#spotify-footer-logo p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.row div{
+  margin-left: 10px; 
+  margin-right: 10px;
+}
+
+.spotify-footer h6 {
+  font-size: 0.8rem;
+  font-weight: 750;
+  color: #919496;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.spotify-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.spotify-footer ul li {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.spotify-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.spotify-footer ul li a:hover {
+  color: #1db954; 
+}
+
+.premium-contacts-icons div{
+  margin-bottom: 250px;
+}
+
+.premium-contacts-icons p{
+  color: #8f8f8f;
+  margin: 0;
+}
+
+.spotify-footer .bi {
+  font-size: 1.5rem;
+  background-color: #222326;
+  padding: 14px;
+  border-radius: 40px;
+}
+
+.spotify-footer .bi:hover {
+  color: #1db954;
+}
+
+.spotify-footer .list-inline {
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+}
+
+.spotify-footer .list-inline-item {
+  margin-right: 15px;
+}
+
+.spotify-footer .list-inline-item:last-child {
+  margin-left: 280px;
+}
+
+.spotify-footer .list-inline-item a {
+  font-size: 0.7rem;
+  color: #919496;
+  text-decoration: none;
+}
+
+.spotify-footer .list-inline-item a:hover {
+  color: #1db954; /* Spotify green on hover */
 }
 
 footer {
