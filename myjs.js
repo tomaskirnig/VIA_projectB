@@ -34,7 +34,7 @@ const gallDirectory = 'img/gallery/';
 // Create artist div with an image and a title
 function createArtist(title, cover) {
   var artist = document.createElement('div');
-  artist.classList.add('artist');
+  artist.classList.add('album'); //artist
 
   var img = document.createElement('img');
   img.src = cover;
@@ -79,7 +79,7 @@ function createAlbum(title, cover) {
   var img = document.createElement('img');
   img.src = cover;
   img.alt = title;
-  img.classList.add('img-fluid'); // Ensures image styling from Bootstrap
+  img.classList.add('img-fluid'); // Image styling from Bootstrap
 
   var p = document.createElement('p');
   p.textContent = title;
@@ -101,7 +101,7 @@ function titlePageAlbums() {
     albumSection.appendChild(albumHeader);
 
     const albumGrid = document.createElement('div');
-    albumGrid.classList.add('album-grid', 'text-light');
+    albumGrid.classList.add('album-grid', 'text-light', 'text-center');
 
     songs.forEach(element => {
       const album = createAlbum(element.title, imgSongDir + element.cover);
@@ -327,5 +327,25 @@ document.addEventListener("DOMContentLoaded", function() {
   }else if (path.includes('Gallery.html')) {
     createGallery();
     setupLightbox();
+  }else if(path.includes('Premium.html')){
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const navMenu = document.getElementById("nav-prem");
+    const overlay = document.getElementById("overlay");
+  
+    function toggleMenu() {
+      const isOpen = navMenu.classList.toggle("open");
+      overlay.classList.toggle("show", isOpen); // Show or hide overlay
+    }
+  
+    function closeMenu() {
+      navMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    }
+  
+    // Open/close menu on hamburger click
+    hamburgerMenu.addEventListener("click", toggleMenu);
+  
+    // Close menu when clicking outside the nav (on the overlay)
+    overlay.addEventListener("click", closeMenu);
   }
 });

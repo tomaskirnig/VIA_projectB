@@ -219,11 +219,16 @@ body {
   height: auto;
 }
 
-.artist img{
+.artist-section{
+  overflow-x: hidden;
+  height: auto;
+}
+
+.artist-section div div img{
   width: 100%;
+  min-width: 50px;
   height: auto;
   border-radius: 150px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .album-grid {
@@ -233,21 +238,20 @@ body {
   flex-wrap: wrap;
   border-radius: 5px;
   overflow: hidden;
-  max-height: 330px;
+  max-height: 270px;
   justify-content: center;
 }
 
-.album {
-  text-align: center;
-  width: 14%;
+.albums-section {
+  overflow-x: hidden;
   height: auto;
 }
 
 .album img {
   width: 100%;
+  min-width: 50px;
   height: auto;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -408,7 +412,7 @@ footer {
   color: white;
 }
 
-#nav-prem {
+/* #nav-prem {
   display: flex;
   gap: 5px;
   margin-right: 2vw;
@@ -422,7 +426,102 @@ footer {
 
 #nav-prem a:hover {
   color: #1ccf05;
+} */
+
+/* Default Navigation Style (Hidden for Small Screens) */
+.nav-right {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Off-screen by default */
+  height: 100%;
+  width: 250px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 1000;
 }
+
+.nav-right.open {
+  right: 0; /* Slide in when open */
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-right a:hover {
+  color: #1ccf05;
+}
+
+/* Hamburger Menu Button */
+#hamburger-menu {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it stays above the overlay */
+}
+
+/* For Small Screens */
+@media (max-width: 800px) {
+  #header-prem button{
+    position: absolute;
+    right: 30px;
+  }
+  
+  #hamburger-menu {
+    display: block; /* Show hamburger menu button */
+  }
+
+  .nav-right {
+    position: fixed;
+    flex-direction: column;
+    right: -100%; /* Always start off-screen */
+    transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  }
+
+  .nav-right.open {
+    right: 0; /* Slide in when open */
+  }
+
+  .pipe{
+    display: none;
+  }
+}
+
+/* For Large Screens  */
+@media (min-width: 801px) {
+  #hamburger-menu {
+    display: none; /* Hide hamburger menu button */
+  }
+
+  .nav-right {
+    position: static; /* Normal inline position */
+    flex-direction: row; /* Align links horizontally */
+    width: auto;
+    height: auto;
+    right: auto; /* Reset position */
+    padding: 0; /* No padding for inline layout */
+    background-color: transparent; /* Transparent background */
+    margin: auto;
+    transition: none; /* Remove transition effect for large screens */
+  }
+
+  .nav-right a {
+    margin-bottom: 0;
+    margin-right: 20px; /* Adjust spacing between links */
+    font-size: 1rem; /* Slightly smaller font for inline links */
+  }
+}
+
+
 
 .hero-section {
   background: linear-gradient(to bottom, #7d2f95, #121212); /* Gradient overlay */
@@ -550,13 +649,14 @@ footer {
   align-items: center;
 }
 
-.premium-features {
-  font-size: 1.1rem;
-  line-height: 1.8;
+.side-by-side h3{
+  text-align: right;
+  padding-left: 20px;
 }
 
-.premium-features li {
-  margin-bottom: 10px;
+.premium-features {
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .features2 {
@@ -581,6 +681,22 @@ footer {
 
 .features2 table tbody tr{
   height: 60px;
+}
+
+.features2 table tbody tr td{
+  justify-items: center;
+  
+}
+
+.features2 table tbody tr td div{
+  height: 44px;
+  width: 44px;
+  color: black;
+  background-color: white;
+  border-radius: 24px;
+  padding: 10px;
+  font-weight: 1000;
+  font-size: 1.2rem;
 }
 
 .features2 table tbody tr:hover{
@@ -824,6 +940,7 @@ footer {
   font-weight: 700;
   color: white;
   background-color: #2a2a2a; 
+  text-decoration: underline;
 }
 
 .accordion-button:focus {
@@ -842,6 +959,10 @@ footer {
 .accordion-body{
   background-color: #1f1f1f;
   color: white;
+}
+
+.accordion-body span{
+  text-decoration: underline;
 }
 
 .spotify-footer {
@@ -952,13 +1073,12 @@ footer {
   padding: 10px 0;
 }
 
-/* When viewport is smaller than 300px, make the image a background */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .hero-section {
     background: 
       url('img/premiumLogo.png') top no-repeat, 
       linear-gradient(to bottom, #7d2f95 0%, #121212 50%);
-    background-size: contain; /* Ensure the image fits within the section */
+    background-size: 100%; /* Ensure the image fits within the section */
     flex-direction: column; /* Stack content vertically */
     align-items: center;
     text-align: center;
