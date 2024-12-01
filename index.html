@@ -44,21 +44,23 @@
     <nav id="index-sidebar" class="sidebar text-light p-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-light active" href="index.html">Home</a>
-          <ul class="nav flex-column ms-3">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="Premium.html">Premium</a>
-            </li>
+          <a class="nav-link text-light" >Homes</a>
+          <ul class="submenu nav flex-column">
+            <li><a class="nav-link text-light" href="Premium.html">Premium</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="Form.html">Form</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="CountDown.html">Count down</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="Gallery.html">Gallery</a>
+          <a class="nav-link text-light" href="#">Other</a>
+          <ul class="submenu nav flex-column">
+            <li>
+              <a id="sub-menu-input" class="nav-link text-light" href="#">Input</a>
+              <ul class="submenu nav flex-column">
+                <li><a class="nav-link text-light" href="Form.html">Form</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link text-light" href="CountDown.html">Countdown</a></li>
+            <li><a class="nav-link text-light" href="Gallery.html">Gallery</a></li>
+          </ul>
         </li>
       </ul>
        <!-- Footer section for links -->
@@ -74,7 +76,7 @@
         <button class="language-button">
             <img src="img/language.png" alt="Language Icon"> Čeština 
         </button>
-    </div>
+      </div>
     </nav>
 
     <!-- Main Content -->

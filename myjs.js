@@ -79,7 +79,7 @@ function createAlbum(title, cover) {
   var img = document.createElement('img');
   img.src = cover;
   img.alt = title;
-  img.classList.add('img-fluid'); // Image styling from Bootstrap
+  img.classList.add('img-fluid'); 
 
   var p = document.createElement('p');
   p.textContent = title;
@@ -127,7 +127,7 @@ function toggleSidebar() {
   const mainDiv = document.getElementsByTagName('body')[0].getElementsByTagName('div')[0];
   mainDiv.style.height = '100%';
   const sidebar = document.querySelector('.sidebar');
-  const overlay = document.createElement('div'); // Overlay to detect clicks outside
+  const overlay = document.createElement('div'); // Overlay to detect clicks outsidev the nav
   overlay.id = 'sidebar-overlay';
   overlay.style.position = 'fixed';
   overlay.style.top = '0';
@@ -151,7 +151,6 @@ function toggleSidebar() {
   }
 }
 
-
 //CountDown page ------------------------------------------------
 function countdown() {
   const countdownKey = "countdownStartTime";
@@ -160,14 +159,21 @@ function countdown() {
 
   let startTime = localStorage.getItem(countdownKey);
 
+  // Reset the countdown if it has already expired
+  if (startTime) {
+    const endTime = parseInt(startTime, 10) + countdownDuration;
+    if (new Date().getTime() >= endTime) {
+      localStorage.removeItem(countdownKey); // Clear stored start time
+      startTime = null; // Reset start time
+    }
+  }
+
   if (!startTime) {
     startTime = new Date().getTime();
     localStorage.setItem(countdownKey, startTime);
-  } else {
-    startTime = parseInt(startTime, 10); 
   }
 
-  const endTime = startTime + countdownDuration;
+  const endTime = parseInt(startTime, 10) + countdownDuration;
 
   const countdownInterval = setInterval(function () {
     const now = new Date().getTime();
@@ -180,7 +186,7 @@ function countdown() {
       document.getElementById("minutes").innerText = "00";
       document.getElementById("seconds").innerText = "00";
       document.getElementById("timeIsUp").innerText = "TIME'S UP!";
-      localStorage.removeItem(countdownKey); // Clear stored start time
+      localStorage.removeItem(countdownKey); 
       return; // Exit the function early to prevent further updates
     }
 
@@ -193,7 +199,7 @@ function countdown() {
     document.getElementById("hours").innerText = String(hours).padStart(2, "0");
     document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
     document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
-  }, 1000); // Update every second
+  }, 1000); 
 }
 
 
@@ -226,14 +232,14 @@ function setupLightbox() {
   // Open lightbox
   document.querySelectorAll('.gallery-image img').forEach(img => {
     img.addEventListener('click', function () {
-      lightboxImg.src = img.src; // Set the image in the lightbox
-      lightbox.style.display = 'flex'; // Show the lightbox
+      lightboxImg.src = img.src; 
+      lightbox.style.display = 'flex'; 
     });
   });
 
   // Close lightbox
   closeLightbox.addEventListener('click', function () {
-    lightbox.style.display = 'none'; // Hide the lightbox
+    lightbox.style.display = 'none'; 
   });
 
   // Close lightbox when clicking outside the image
@@ -249,8 +255,8 @@ function createGallery() {
   const gallery_div = document.getElementById('gallery-div');
 
   for (let i = 0; i < 4; i++) {
-    titlesAndCovers.forEach(element => {
-      var galleryImage = createGalleryImage(element.title, imgDirectory + element.cover);
+    songs.forEach(element => {
+      var galleryImage = createGalleryImage(element.title, imgSongDir + element.cover);
       gallery_div.appendChild(galleryImage);
     });
   }
@@ -266,50 +272,52 @@ function setupForm() {
   albumForm.addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent the form from refreshing the page
 
+    // Extract form values
     const albumTitle = document.getElementById("albumTitle").value.trim();
     const albumCover = document.getElementById("albumCover").value.trim();
+    const albumGenre = document.getElementById("albumGenre").value;
+    const isPublished = document.getElementById("isPublished").checked;
+    const visibility = document.querySelector(
+      'input[name="albumVisibility"]:checked'
+    )?.id || "None selected";
 
-    // Validate inputs
-    if (!albumTitle || !albumCover) {
-      alert("Please fill in all fields for the album.");
-      return;
-    }
-
-    // Display the input under the form
+    // Display the submitted data
     const outputDiv = document.createElement("div");
+    outputDiv.className = "mt-4 p-3 bg-dark text-light rounded";
     outputDiv.innerHTML = `
-      <p><strong>Album Title:</strong> ${albumTitle}</p>
-      <p><strong>Album Cover:</strong> ${albumCover}</p>
+      <hr>
+      <h5>Submitted Album Information:</h5>
+      <ul>
+        <li><strong>Title:</strong> ${albumTitle}</li>
+        <li><strong>Cover:</strong> ${albumCover}</li>
+        <li><strong>Genre:</strong> ${albumGenre}</li>
+        <li><strong>Published:</strong> ${isPublished ? "Yes" : "No"}</li>
+        <li><strong>Visibility:</strong> ${visibility}</li>
+      </ul>
     `;
-    albumForm.appendChild(outputDiv);
 
-    // Clear the form
+    albumForm.parentElement.appendChild(outputDiv);
+
     albumForm.reset();
   });
 
   songForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the form from refreshing the page
+    e.preventDefault(); 
 
     const songName = document.getElementById("songName").value.trim();
     const songAlbum = document.getElementById("songAlbum").value.trim();
     const songInterpret = document.getElementById("songInterpret").value.trim();
 
-    // Validate inputs
-    if (!songName || !songAlbum || !songInterpret) {
-      alert("Please fill in all fields for the song.");
-      return;
-    }
-
-    // Display the input under the form
     const outputDiv = document.createElement("div");
     outputDiv.innerHTML = `
+      <hr>
       <p><strong>Song Name:</strong> ${songName}</p>
       <p><strong>Album:</strong> ${songAlbum}</p>
       <p><strong>Interpret:</strong> ${songInterpret}</p>
     `;
+    outputDiv.style.marginTop = "30px";
     songForm.appendChild(outputDiv);
 
-    // Clear the form
     songForm.reset();
   });
 }

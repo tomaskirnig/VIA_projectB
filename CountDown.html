@@ -42,16 +42,23 @@
     <nav id="other-sidebar" class="sidebar text-light p-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-light active" href="index.html">Home</a>
+          <a class="nav-link text-light" href="index.html">Homes</a>
+          <ul class="submenu nav flex-column">
+            <li><a class="nav-link text-light" href="Premium.html">Premium</a></li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="Form.html">Form</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="CountDown.html">Count down</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="Gallery.html">Gallery</a>
+          <a class="nav-link text-light" href="#">Other</a>
+          <ul class="submenu nav flex-column">
+            <li>
+              <a id="sub-menu-input" class="nav-link text-light" href="#">Input</a>
+              <ul class="submenu nav flex-column">
+                <li><a class="nav-link text-light" href="Form.html">Form</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link text-light" href="CountDown.html">Countdown</a></li>
+            <li><a class="nav-link text-light" href="Gallery.html">Gallery</a></li>
+          </ul>
         </li>
       </ul>
        <!-- Footer section for links -->
@@ -79,19 +86,19 @@
           </div>
           <div class="row">
             <div class="col">
-                <h2 id="days" class="display-4">0</h2>
+                <h2 id="days" class="display-4">00</h2>
                 <p>Days</p>
             </div>
             <div class="col">
-                <h2 id="hours" class="display-4">0</h2>
+                <h2 id="hours" class="display-4">00</h2>
                 <p>Hours</p>
             </div>
             <div class="col">
-                <h2 id="minutes" class="display-4">0</h2>
+                <h2 id="minutes" class="display-4">00</h2>
                 <p>Minutes</p>
             </div>
             <div class="col">
-                <h2 id="seconds" class="display-4">0</h2>
+                <h2 id="seconds" class="display-4">00</h2>
                 <p>Seconds</p>
             </div>
         </div>

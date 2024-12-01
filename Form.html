@@ -41,16 +41,23 @@
     <nav id="other-sidebar" class="sidebar text-light p-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-light active" href="index.html">Home</a>
+          <a class="nav-link text-light" href="index.html">Homes</a>
+          <ul class="submenu nav flex-column">
+            <li><a class="nav-link text-light" href="Premium.html">Premium</a></li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="Form.html">Form</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="CountDown.html">Count down</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="Gallery.html">Gallery</a>
+          <a class="nav-link text-light" href="#">Other</a>
+          <ul class="submenu nav flex-column">
+            <li>
+              <a id="sub-menu-input" class="nav-link text-light" href="#">Input</a>
+              <ul class="submenu nav flex-column">
+                <li><a class="nav-link text-light" href="Form.html">Form</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link text-light" href="CountDown.html">Countdown</a></li>
+            <li><a class="nav-link text-light" href="Gallery.html">Gallery</a></li>
+          </ul>
         </li>
       </ul>
        <!-- Footer section for links -->
@@ -92,15 +99,31 @@
                 <form id="albumForm">
                   <div class="mb-3">
                     <label for="albumTitle" class="form-label">Album Title</label>
-                    <input type="text" class="form-control" id="albumTitle" placeholder="Enter album title">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="albumTitle" 
+                      placeholder="Enter album title" 
+                      pattern="^[a-zA-Z0-9 ]{3,100}$" 
+                      title="Title must be 3-100 characters and can only contain letters, numbers, and spaces" 
+                      required
+                    >
                   </div>
                   <div class="mb-3">
                     <label for="albumCover" class="form-label">Image Source</label>
-                    <input type="text" class="form-control" id="albumCover" placeholder="Enter image source">
-                  </div>
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="albumCover" 
+                      placeholder="Enter image source (.png/.jpg)" 
+                      pattern="^.*\.(png|jpg)$" 
+                      title="Image source must be a supported file format ending with .png or .jpg" 
+                      required
+                    >
+                  </div>                  
                   <div class="mb-3">
                     <label for="albumGenre" class="form-label">Genre</label>
-                    <select class="form-select" id="albumGenre">
+                    <select class="form-select" id="albumGenre" required>
                       <option value="" disabled selected>Select genre</option>
                       <option value="pop">Pop</option>
                       <option value="rock">Rock</option>
@@ -111,34 +134,66 @@
                   </div>
                   <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" id="isPublished">
-                    <label class="form-check-label" for="isPublished">
-                      Publish Album Immediately
-                    </label>
+                    <label class="form-check-label" for="isPublished">Publish Album Immediately</label>
                   </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="albumVisibility" id="visibilityPrivate">
+                    <label class="form-check-label" for="visibilityPrivate">Private</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="albumVisibility" id="visibilityPublic">
+                    <label class="form-check-label" for="visibilityPublic">Public</label>
+                  </div>
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="radio" name="albumVisibility" id="visibilityScheduled">
+                    <label class="form-check-label" for="visibilityScheduled">Scheduled</label>
+                  </div>                  
                   <button type="submit" class="btn btn-primary w-100">Add Album</button>
                 </form>
               </div>
 
-      
               <!-- Song Form -->
               <div class="tab-pane fade" id="song" role="tabpanel" aria-labelledby="song-tab">
                 <form id="songForm">
                   <div class="mb-3">
                     <label for="songName" class="form-label">Song Name</label>
-                    <input type="text" class="form-control" id="songName" placeholder="Enter song name">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="songName" 
+                      placeholder="Enter song name" 
+                      pattern="^[a-zA-Z0-9 ]{3,100}$" 
+                      title="Song name must be 3-100 characters and can only contain letters, numbers, and spaces" 
+                      required
+                    >
                   </div>
                   <div class="mb-3">
                     <label for="songAlbum" class="form-label">Album</label>
-                    <input type="text" class="form-control" id="songAlbum" placeholder="Enter album name">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="songAlbum" 
+                      placeholder="Enter album name" 
+                      pattern="^[a-zA-Z0-9 ]{3,100}$" 
+                      title="Album name must be 3-100 characters and can only contain letters, numbers, and spaces" 
+                      required
+                    >
                   </div>
                   <div class="mb-3">
                     <label for="songInterpret" class="form-label">Interpret</label>
-                    <input type="text" class="form-control" id="songInterpret" placeholder="Enter interpret name">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="songInterpret" 
+                      placeholder="Enter interpret name" 
+                      pattern="^[a-zA-Z ]{3,50}$" 
+                      title="Interpret name must be 3-50 characters and can only contain letters and spaces" 
+                      required
+                    >
                   </div>
                   <button type="submit" class="btn btn-primary w-100">Add Song</button>
                 </form>
               </div>
-            </div>
           </div>
         </div>
     </div>
