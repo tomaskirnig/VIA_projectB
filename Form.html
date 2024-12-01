@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="img/spotifyIcon.png">
 </head>
 <body>
-  <header class="spotify-header d-flex justify-content-between align-items-center">
+  <header id="nav1" class="spotify-header justify-content-between align-items-center">
     <div id="logo-div">
         <img src="img/spotify.png" alt="Spotify Logo">
     </div>
@@ -25,10 +25,20 @@
         <button class="login-btn">Přihlásit se</button>
     </nav>
   </header>
+
+  <header id="nav2" class="spotify-header align-items-center justify-content-between">
+    <button class="menu-btn" aria-label="Menu" onclick="toggleSidebar()">☰</button>
+    <div id="logo-div">
+      <img src="img/spotify.png" alt="Spotify Logo">
+    </div>
+    <div class="center-container d-flex gap-3">
+      <input type="search" class="form-control search-bar" placeholder="Search">
+    </div>
+  </header>
     
-      <!-- Sidebar -->
+  <!-- Sidebar -->
   <div class="d-flex">
-    <nav id="sidebar" class="text-light p-3">
+    <nav id="other-sidebar" class="sidebar text-light p-3">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link text-light active" href="index.html">Home</a>
@@ -88,9 +98,27 @@
                     <label for="albumCover" class="form-label">Image Source</label>
                     <input type="text" class="form-control" id="albumCover" placeholder="Enter image source">
                   </div>
+                  <div class="mb-3">
+                    <label for="albumGenre" class="form-label">Genre</label>
+                    <select class="form-select" id="albumGenre">
+                      <option value="" disabled selected>Select genre</option>
+                      <option value="pop">Pop</option>
+                      <option value="rock">Rock</option>
+                      <option value="hiphop">Hip-Hop</option>
+                      <option value="jazz">Jazz</option>
+                      <option value="classical">Classical</option>
+                    </select>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="isPublished">
+                    <label class="form-check-label" for="isPublished">
+                      Publish Album Immediately
+                    </label>
+                  </div>
                   <button type="submit" class="btn btn-primary w-100">Add Album</button>
                 </form>
               </div>
+
       
               <!-- Song Form -->
               <div class="tab-pane fade" id="song" role="tabpanel" aria-labelledby="song-tab">

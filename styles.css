@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  height: 100%;
 }
 
 .spotify-header {
@@ -35,16 +36,16 @@ body {
 .home-button {
   background-color: #1f1f1f;
   border: none;
-  padding: 12px; /* Adjust padding for size */
+  padding: 12px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%; /* Makes it a circle */
+  border-radius: 50%; 
 }
 
 .home-icon {
-  width: 24px; /* Adjust the size as needed */
+  width: 24px; 
   height: 24px;
 }
 
@@ -55,7 +56,7 @@ body {
   border-radius: 20px;
   padding: 5px 10px;
   width: 300px;
-  margin: 0 auto; /* Center the search bar in the header */
+  margin: 0 auto; 
 }
 
 .search-bar::placeholder {
@@ -77,26 +78,23 @@ body {
   padding: 5px 15px;
 }
 
-/* #sidebar {
-  width: 250px;
-  height: 100vh;
-  position: fixed;
-  top: 70px;
-  left: 5px;
-  border-radius: 5px;
-  height: calc(100vh - 160px);
-  background-color: #121212;
-} */
-#sidebar {
+.sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: 84vh; */
-  height: calc(100vh - 160px);
+  
   min-width: 250px;
   background-color: #121212;
   padding: 20px;
   border-radius: 5px;
+}
+
+#index-sidebar{
+  height: calc(100vh - 160px);
+}
+
+#other-sidebar{
+  height: calc(100vh - 68px);
 }
 
 .nav {
@@ -296,7 +294,7 @@ footer {
 #main-content-add-album{
   border-radius: 5px;
   margin-left: 5px;
-  height: calc(100vh - 160px);
+  height: 100%;
   padding-bottom: 20px;
   height: 450px;
 }
@@ -312,7 +310,7 @@ footer {
   gap: 20px;
   padding: 20px;
   overflow-y: auto;
-  height: calc(100vh - 160px); 
+  height: calc(100vh - 68px); 
   border-radius: 5px;
   justify-content: center;
 }
@@ -460,7 +458,6 @@ footer {
   color: #1ccf05;
 }
 
-/* Hamburger Menu Button */
 #hamburger-menu {
   display: none; /* Hidden by default */
   background: none;
@@ -1097,6 +1094,10 @@ footer {
   }
 }
 
+.spotify-header + .spotify-header {
+  display: none;
+}
+
 /* For wider viewports */
 @media (min-width: 1200px) {
   .container {
@@ -1106,5 +1107,70 @@ footer {
   .pricing-card {
     /* width: calc(33.33% - 20px);  */
     width: 350px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 100vh !important;
+    background-color: #121212;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .spotify-header {
+    justify-content: space-between;
+  }
+
+  .menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .spotify-header:first-child {
+    display: none;
+  }
+
+  .spotify-header + .spotify-header {
+    display: flex;
+  }
+
+  #gallery-container{
+    width: 100vw;
+  }
+
+  #gallery-div {
+   width: 100%;
+   max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin-top: 60px; /* Avoid overlap with header */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-image {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  #formTabsContent {
+    padding: 10px;
   }
 }

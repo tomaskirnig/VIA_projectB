@@ -123,6 +123,35 @@ function showScrollbar(mainContent) {
   mainContent.classList.remove('hide-scrollbar');
 }
 
+function toggleSidebar() {
+  const mainDiv = document.getElementsByTagName('body')[0].getElementsByTagName('div')[0];
+  mainDiv.style.height = '100%';
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.createElement('div'); // Overlay to detect clicks outside
+  overlay.id = 'sidebar-overlay';
+  overlay.style.position = 'fixed';
+  overlay.style.top = '0';
+  overlay.style.left = '0';
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  overlay.style.zIndex = '999'; // Ensure it's above other elements
+  overlay.style.display = sidebar.classList.contains('open') ? 'none' : 'block';
+  
+  sidebar.classList.toggle('open');
+  
+  if (sidebar.classList.contains('open')) {
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      document.body.removeChild(overlay);
+    });
+  } else if (document.getElementById('sidebar-overlay')) {
+    document.body.removeChild(overlay);
+  }
+}
+
+
 //CountDown page ------------------------------------------------
 function countdown() {
   const countdownKey = "countdownStartTime";

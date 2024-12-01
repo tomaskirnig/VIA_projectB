@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <header class="spotify-header d-flex justify-content-between align-items-center">
+  <header id="nav1" class="spotify-header justify-content-between align-items-center">
     <div id="logo-div">
         <img src="img/spotify.png" alt="Spotify Logo">
     </div>
@@ -28,9 +28,20 @@
     </nav>
   </header>
 
+  <header id="nav2" class="spotify-header align-items-center justify-content-between">
+    <button class="menu-btn" aria-label="Menu" onclick="toggleSidebar()">☰</button>
+    <div id="logo-div">
+      <img src="img/spotify.png" alt="Spotify Logo">
+    </div>
+    <div class="center-container d-flex gap-3">
+      <input type="search" class="form-control search-bar" placeholder="Search">
+    </div>
+  </header>
+  
+
   <!-- Sidebar -->
   <div class="d-flex">
-    <nav id="sidebar" class="text-light p-3">
+    <nav id="index-sidebar" class="sidebar text-light p-3">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link text-light active" href="index.html">Home</a>
